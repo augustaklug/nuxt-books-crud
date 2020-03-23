@@ -45,7 +45,7 @@ import { mapState } from 'vuex'
 export default {
   async fetch({ store, error, params }) {
     try {
-      await store.dispatch('events/fetchBook', params.id)
+      await store.dispatch('fetchBook', params.id)
     } catch (e) {
       error({
         statusCode: 503,
@@ -54,7 +54,7 @@ export default {
     }
   },
   computed: mapState({
-    book: (state) => state.events.book
+    book: (state) => state.book
   }),
   head() {
     return {

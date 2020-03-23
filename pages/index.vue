@@ -19,7 +19,7 @@ import BookCard from '@/components/BookCard.vue'
 export default {
   async fetch({ store, error }) {
     try {
-      await store.dispatch('events/fetchBooks')
+      await store.dispatch('fetchBooks')
     } catch (e) {
       error({
         statusCode: 503,
@@ -31,7 +31,7 @@ export default {
     BookCard
   },
   computed: mapState({
-    books: (state) => state.events.books
+    books: (state) => state.books
   }),
   head() {
     return {
