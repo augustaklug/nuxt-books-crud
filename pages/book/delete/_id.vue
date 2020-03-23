@@ -1,16 +1,19 @@
 <template>
   <section>
-    <h3>Delete book</h3>
+    <h1>Delete book</h1>
+    <v-divider></v-divider>
+    <br />
     <h2>{{ book.title }}</h2>
     <form v-on:submit.prevent="deleteThisBook(book.id)">
+      <br />
       <p>
         <em><b>WARNING!</b></em> The action cannot be undone.
       </p>
-      <v-btn type="submit" color="red" outlined
+      <v-btn type="submit" color="red" dark
         >Delete<v-icon dark right>mdi-delete</v-icon></v-btn
       >
       <nuxt-link to="/">
-        <v-btn color="primary" outlined
+        <v-btn color="primary"
           >Cancel<v-icon dark right>mdi-cancel</v-icon></v-btn
         >
       </nuxt-link>

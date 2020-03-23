@@ -21,5 +21,8 @@ export default {
   },
   removeBook(id) {
     return apiClient.delete('/books/' + id)
+  },
+  updateBook(id, book) {
+    return apiClient.put('/books/' + id, book)
   }
 }
