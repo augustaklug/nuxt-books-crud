@@ -1,4 +1,5 @@
 import EventService from '@/services/EventService.js'
+
 export const state = () => ({
   books: [],
   book: {}
@@ -9,6 +10,12 @@ export const mutations = {
   },
   SET_BOOK(state, book) {
     state.book = book
+  },
+  ADD_BOOK: (state, book) => {
+    state.books.push(book)
+  },
+  DELETE_BOOK: (state, id) => {
+    state.books = state.books.filter((item) => id !== item.id)
   }
 }
 export const actions = {
@@ -20,6 +27,16 @@ export const actions = {
   fetchBook({ commit }, id) {
     return EventService.getBook(id).then((response) => {
       commit('SET_BOOK', response.data)
+    })
+  },
+  addBook({ commit }, book) {
+    return EventService.createBook(book).then((response) => {
+      commit('ADD_BOOK', book)
+    })
+  },
+  deleteBook({ commit }, id) {
+    return EventService.removeBook(id).then((response) => {
+      commit('DELETE_BOOK')
     })
   }
 }

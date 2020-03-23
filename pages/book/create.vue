@@ -7,6 +7,8 @@
       <v-text-field
         prepend-inner-icon="mdi-account"
         label="Author"
+        v-model="author"
+        type="text"
         outlined
         clearable
         required
@@ -14,6 +16,8 @@
       <v-text-field
         prepend-inner-icon="mdi-format-text"
         label="Title"
+        v-model="title"
+        type="text"
         outlined
         clearable
         required
@@ -21,6 +25,8 @@
       <v-text-field
         prepend-inner-icon="mdi-calendar"
         label="Year"
+        v-model="year"
+        type="number"
         outlined
         clearable
         required
@@ -28,6 +34,8 @@
       <v-text-field
         prepend-inner-icon="mdi-earth"
         label="Country"
+        v-model="country"
+        type="text"
         outlined
         clearable
         required
@@ -35,6 +43,8 @@
       <v-text-field
         prepend-inner-icon="mdi-translate"
         label="Language"
+        v-model="language"
+        type="text"
         outlined
         clearable
         required
@@ -42,11 +52,13 @@
       <v-text-field
         prepend-inner-icon="mdi-book-open-page-variant"
         label="Pages"
+        v-model="pages"
+        type="number"
         outlined
         clearable
         required
       ></v-text-field>
-      <v-btn class="ma-2" color="primary" dark absolute right
+      <v-btn @click="addNewBook" color="primary" dark absolute right
         >Submit
         <v-icon dark right>mdi-checkbox-marked-circle-outline</v-icon>
       </v-btn>
@@ -54,7 +66,23 @@
   </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
+
 export default {
+  methods: {
+    ...mapActions(['addBook']),
+    addNewBook() {
+      this.addBook({
+        author: this.author,
+        title: this.title,
+        year: this.year,
+        country: this.country,
+        language: this.language,
+        pages: this.pages
+      })
+      this.$router.push('/')
+    }
+  },
   head() {
     return {
       title: 'Add a book',
@@ -62,7 +90,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'You can create a new event in your neighborhood'
+          content: 'You can create a new book in your list'
         }
       ]
     }
