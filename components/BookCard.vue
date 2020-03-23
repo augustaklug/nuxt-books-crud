@@ -1,20 +1,20 @@
 <template>
-  <nuxt-link :to="'/book/' + book.id">
-    <div class="-shadow">
+  <div class="-shadow">
+    <nuxt-link :to="'/book/' + book.id">
       <h4 class="title">
         {{ book.title }} <v-icon>mdi-slash-forward</v-icon> {{ book.author }}
       </h4>
-      <span class="float-right">
-        <v-btn icon color="amber">
-          <v-icon>mdi-pencil</v-icon>
-        </v-btn>
-        <v-btn icon color="red">
-          <v-icon>mdi-delete</v-icon>
-        </v-btn>
-      </span>
-      <br />
-    </div>
-  </nuxt-link>
+    </nuxt-link>
+    <span class="float-right">
+      <v-btn icon color="amber">
+        <v-icon>mdi-pencil</v-icon>
+      </v-btn>
+      <v-btn icon color="red">
+        <v-icon>mdi-delete</v-icon>
+      </v-btn>
+    </span>
+    <br />
+  </div>
 </template>
 <script>
 export default {

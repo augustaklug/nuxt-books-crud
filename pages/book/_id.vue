@@ -1,13 +1,31 @@
 <template>
   <div>
     <div class="event-header">
-      <h3 class="eyebrow"><v-icon>mdi-account</v-icon> {{ book.author }}</h3>
-      <h2><v-icon>mdi-format-text</v-icon> {{ book.title }}</h2>
+      <h3 class="eyebrow">
+        <v-icon>mdi-account</v-icon>
+        <v-divider class="mx-4" inset vertical></v-divider>{{ book.author }}
+      </h3>
+      <h2>
+        <v-icon>mdi-format-text</v-icon
+        ><v-divider class="mx-4" inset vertical></v-divider> {{ book.title }}
+      </h2>
     </div>
-    <h5><v-icon>mdi-calendar</v-icon> {{ book.year }}</h5>
-    <h5><v-icon>mdi-earth</v-icon> {{ book.country }}</h5>
-    <h5><v-icon>mdi-translate</v-icon> {{ book.language }}</h5>
-    <h5><v-icon>mdi-book-open-page-variant</v-icon> {{ book.pages }}</h5>
+    <h5>
+      <v-icon>mdi-calendar</v-icon
+      ><v-divider class="mx-4" inset vertical></v-divider> {{ book.year }}
+    </h5>
+    <h5>
+      <v-icon>mdi-earth</v-icon
+      ><v-divider class="mx-4" inset vertical></v-divider> {{ book.country }}
+    </h5>
+    <h5>
+      <v-icon>mdi-translate</v-icon
+      ><v-divider class="mx-4" inset vertical></v-divider> {{ book.language }}
+    </h5>
+    <h5>
+      <v-icon>mdi-book-open-page-variant</v-icon
+      ><v-divider class="mx-4" inset vertical></v-divider> {{ book.pages }}p
+    </h5>
   </div>
 </template>
 

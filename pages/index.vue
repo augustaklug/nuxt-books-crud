@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>My books</h1>
+    <h1>My books :</h1>
+    <v-divider></v-divider>
+    <br />
     <BookCard
       v-for="(book, index) in books"
       :key="index"
