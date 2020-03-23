@@ -9,6 +9,15 @@
         contain
       ></v-img>
       <v-toolbar-title v-text="title" />
+      <v-spacer></v-spacer>
+      <nuxt-link to="/"
+        ><v-btn icon color="teal">
+          <v-icon>mdi-home</v-icon>
+        </v-btn></nuxt-link
+      >
+      <v-btn icon color="indigo">
+        <v-icon>mdi-plus</v-icon>
+      </v-btn>
     </v-app-bar>
     <v-content>
       <v-container>
@@ -60,6 +69,7 @@ a {
   color: #39b982;
   font-weight: 600;
   background-color: transparent;
+  text-decoration: none;
 }
 img {
   border-style: none;

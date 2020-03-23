@@ -1,22 +1,20 @@
 <template>
-  <div class="-shadow">
-    <v-img :src="book.imageLink" height="300px" />
-    <h4 class="title">
-      {{ book.title }}
-    </h4>
-    <p class="eyebrow">{{ book.author }}</p>
-    <p>Published in {{ book.year }} in {{ book.country }}</p>
-    <p>{{ book.pages }} pages</p>
-    <span class="float-right">
-      <v-btn icon>
-        <v-icon>mdi-pencil</v-icon>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>mdi-delete</v-icon>
-      </v-btn>
-    </span>
-    <br />
-  </div>
+  <nuxt-link :to="'/book/' + book.id">
+    <div class="-shadow">
+      <h4 class="title">
+        {{ book.title }} <v-icon>mdi-slash-forward</v-icon> {{ book.author }}
+      </h4>
+      <span class="float-right">
+        <v-btn icon color="amber">
+          <v-icon>mdi-pencil</v-icon>
+        </v-btn>
+        <v-btn icon color="red">
+          <v-icon>mdi-delete</v-icon>
+        </v-btn>
+      </span>
+      <br />
+    </div>
+  </nuxt-link>
 </template>
 <script>
 export default {

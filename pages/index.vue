@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Livros</h1>
+    <h1>My books</h1>
     <BookCard
       v-for="(book, index) in books"
       :key="index"
