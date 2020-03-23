@@ -1,3 +1,4 @@
+import EventService from './services/EventService.js'
 import colors from 'vuetify/es5/util/colors'
 
 export default {
@@ -22,7 +23,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#39b982' },
   /*
    ** Global CSS
    */
@@ -80,5 +81,14 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  generate: {
+    routes: () => {
+      return EventService.getBooks().then(response => {
+        return response.data.map(book => {
+          return '/book/' + book.id
+        })
+      })
+    }
   }
 }

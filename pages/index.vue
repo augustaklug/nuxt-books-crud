@@ -1,11 +1,40 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-center"></div>
-    </v-flex>
-  </v-layout>
+  <div>
+    <h1>Livros</h1>
+    <BookCard
+      v-for="(book, index) in books"
+      :key="index"
+      :book="book"
+      :data-index="index"
+    />
+  </div>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+import BookCard from '@/components/BookCard.vue'
+
+export default {
+  async fetch({ store, error }) {
+    try {
+      await store.dispatch('events/fetchBooks')
+    } catch (e) {
+      error({
+        statusCode: 503,
+        message: 'Unable to fetch books at this time. Please try again.'
+      })
+    }
+  },
+  components: {
+    BookCard
+  },
+  computed: mapState({
+    books: (state) => state.events.books
+  }),
+  head() {
+    return {
+      title: 'Book Listing'
+    }
+  }
+}
 </script>
