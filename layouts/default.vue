@@ -15,9 +15,11 @@
           <v-icon>mdi-home</v-icon>
         </v-btn></nuxt-link
       >
-      <v-btn icon color="indigo">
-        <v-icon>mdi-plus</v-icon>
-      </v-btn>
+      <nuxt-link to="/book/create">
+        <v-btn icon color="indigo">
+          <v-icon>mdi-plus</v-icon>
+        </v-btn></nuxt-link
+      >
     </v-app-bar>
     <v-content>
       <v-container>
@@ -149,94 +151,6 @@ small {
 .badge.-fill-gradient {
   background: linear-gradient(to right, #16c0b0, #84cf6a);
   color: #fff;
-}
-button,
-label,
-input,
-optgroup,
-select,
-textarea {
-  display: inline-flex;
-  font-family: 'Open sans', sans-serif;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-button,
-input {
-  overflow: visible;
-}
-button,
-select {
-  text-transform: none;
-}
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: none;
-}
-button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
-  outline: 2px solid #39b982;
-}
-label {
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 700;
-}
-input,
-textarea {
-  box-sizing: border-box;
-  border: solid 1px rgba(0, 0, 0, 0.4);
-}
-textarea {
-  width: 100%;
-  overflow: auto;
-  font-size: 20px;
-}
-[type='checkbox'],
-[type='radio'] {
-  box-sizing: border-box;
-  padding: 0;
-}
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
-  height: auto;
-}
-[type='search'] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-[type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-[type='text'],
-[type='number'],
-[type='search'],
-[type='password'] {
-  height: 52px;
-  width: 100%;
-  padding: 0 10px;
-  font-size: 20px;
-}
-[type='text']:focus,
-[type='number']:focus,
-[type='search']:focus,
-[type='password']:focus {
-  border-color: #39b982;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
 }
 [hidden] {
   display: none;

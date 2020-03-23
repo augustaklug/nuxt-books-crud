@@ -77,6 +77,7 @@ export default {
    ** Build configuration
    */
   build: {
+    transpile: ['vee-validate/dist/rules'],
     /*
      ** You can extend webpack config here
      */
@@ -84,8 +85,8 @@ export default {
   },
   generate: {
     routes: () => {
-      return EventService.getBooks().then(response => {
-        return response.data.map(book => {
+      return EventService.getBooks().then((response) => {
+        return response.data.map((book) => {
           return '/book/' + book.id
         })
       })
