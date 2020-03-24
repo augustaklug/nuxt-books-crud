@@ -15,7 +15,8 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "nuxt": "^2.0.0",
-    "vee-validate": "^3.2.5"
+    "vee-validate": "^3.2.5",
+    "vuex-map-fields": "^1.4.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0",

@@ -11,13 +11,13 @@
       <v-toolbar-title v-text="title" />
       <v-spacer></v-spacer>
       <nuxt-link to="/"
-        ><v-btn icon color="teal">
-          <v-icon>mdi-home</v-icon>
+        ><v-btn text color="teal">
+          Home<v-icon>mdi-home</v-icon>
         </v-btn></nuxt-link
       >
       <nuxt-link to="/book/create">
-        <v-btn icon color="indigo">
-          <v-icon>mdi-plus</v-icon>
+        <v-btn text color="indigo">
+          Add Book<v-icon>mdi-plus</v-icon>
         </v-btn></nuxt-link
       >
     </v-app-bar>

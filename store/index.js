@@ -19,6 +19,9 @@ export const mutations = {
   },
   UPDATE_BOOK: (state, book) => {
     state.books.push(book)
+  },
+  updateAuthor(state, author) {
+    state.book.author = author
   }
 }
 export const actions = {

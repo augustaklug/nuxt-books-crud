@@ -7,7 +7,7 @@
       <v-text-field
         prepend-inner-icon="mdi-account"
         label="Author"
-        v-model="book.author"
+        :value="book.author"
         type="text"
         outlined
         clearable
@@ -16,7 +16,7 @@
       <v-text-field
         prepend-inner-icon="mdi-format-text"
         label="Title"
-        v-model="book.title"
+        :value="book.title"
         type="text"
         outlined
         clearable
@@ -25,7 +25,7 @@
       <v-text-field
         prepend-inner-icon="mdi-calendar"
         label="Year"
-        v-model="book.year"
+        :value="book.year"
         type="number"
         outlined
         clearable
@@ -34,7 +34,7 @@
       <v-text-field
         prepend-inner-icon="mdi-earth"
         label="Country"
-        v-model="book.country"
+        :value="book.country"
         type="text"
         outlined
         clearable
@@ -43,7 +43,7 @@
       <v-text-field
         prepend-inner-icon="mdi-translate"
         label="Language"
-        v-model="book.language"
+        :value="book.language"
         type="text"
         outlined
         clearable
@@ -52,7 +52,7 @@
       <v-text-field
         prepend-inner-icon="mdi-book-open-page-variant"
         label="Pages"
-        v-model="book.pages"
+        :value="book.pages"
         type="number"
         outlined
         clearable
@@ -94,7 +94,7 @@ export default {
     ...mapActions(['updateBook']),
     updateThisBook(id, book) {
       this.updateBook(id, book)
-      this.$router.push(`'/book/' + book.id`)
+      this.$router.push('/book/' + book.id)
     }
   },
   head() {

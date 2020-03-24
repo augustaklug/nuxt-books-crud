@@ -27,14 +27,9 @@
       ><v-divider class="mx-4" inset vertical></v-divider> {{ book.pages }}p
     </h5>
     <span class="float-right">
-      <nuxt-link :to="'/book/update/' + book.id">
-        <v-btn icon color="amber">
-          <v-icon>mdi-pencil</v-icon>
-        </v-btn>
-      </nuxt-link>
       <nuxt-link :to="'/book/delete/' + book.id">
-        <v-btn icon color="red">
-          <v-icon>mdi-delete</v-icon>
+        <v-btn text color="red darken-3">
+          Delete<v-icon>mdi-delete</v-icon>
         </v-btn>
       </nuxt-link>
     </span>
