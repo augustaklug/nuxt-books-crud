@@ -26,6 +26,9 @@ import { mapState } from 'vuex'
 import BookCard from '@/components/BookCard.vue'
 
 export default {
+  components: {
+    BookCard
+  },
   async fetch({ store, error }) {
     try {
       await store.dispatch('fetchBooks')
@@ -41,6 +44,9 @@ export default {
       renderComponent: true
     }
   },
+  computed: mapState({
+    books: (state) => state.books
+  }),
   methods: {
     forceRenderer() {
       this.renderComponent = false
@@ -50,12 +56,6 @@ export default {
       })
     }
   },
-  components: {
-    BookCard
-  },
-  computed: mapState({
-    books: (state) => state.books
-  }),
   head() {
     return {
       title: 'Book Listing'

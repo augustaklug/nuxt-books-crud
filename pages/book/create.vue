@@ -3,62 +3,74 @@
     <h1>Add a book</h1>
     <v-divider></v-divider>
     <br />
-    <v-form>
+    <v-form v-model="isFormValid" @submit.prevent="addNewBook">
       <v-text-field
+        v-model="author"
+        :rules="formRules"
         prepend-inner-icon="mdi-account"
         label="Author"
-        v-model="author"
         type="text"
         outlined
         clearable
         required
       ></v-text-field>
       <v-text-field
+        v-model="title"
+        :rules="formRules"
         prepend-inner-icon="mdi-format-text"
         label="Title"
-        v-model="title"
         type="text"
         outlined
         clearable
         required
       ></v-text-field>
       <v-text-field
+        v-model="year"
+        :rules="formRules"
         prepend-inner-icon="mdi-calendar"
         label="Year"
-        v-model="year"
         type="number"
         outlined
         clearable
         required
       ></v-text-field>
       <v-text-field
+        v-model="country"
+        :rules="formRules"
         prepend-inner-icon="mdi-earth"
         label="Country"
-        v-model="country"
         type="text"
         outlined
         clearable
         required
       ></v-text-field>
       <v-text-field
+        v-model="language"
+        :rules="formRules"
         prepend-inner-icon="mdi-translate"
         label="Language"
-        v-model="language"
         type="text"
         outlined
         clearable
         required
       ></v-text-field>
       <v-text-field
+        v-model="pages"
+        :rules="formRules"
         prepend-inner-icon="mdi-book-open-page-variant"
         label="Pages"
-        v-model="pages"
         type="number"
         outlined
         clearable
         required
       ></v-text-field>
-      <v-btn @click="addNewBook" color="primary" dark absolute right
+      <v-btn
+        type="submit"
+        :disabled="!isFormValid"
+        color="primary"
+        dark
+        absolute
+        right
         >Submit
         <v-icon dark right>mdi-checkbox-marked-circle-outline</v-icon>
       </v-btn>
@@ -69,6 +81,12 @@
 import { mapActions } from 'vuex'
 
 export default {
+  data() {
+    return {
+      isFormValid: false,
+      formRules: [(v) => !!v || 'The field is required']
+    }
+  },
   methods: {
     ...mapActions(['addBook']),
     addNewBook() {

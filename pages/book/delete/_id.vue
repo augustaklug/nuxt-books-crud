@@ -4,16 +4,16 @@
     <v-divider></v-divider>
     <br />
     <h2>{{ book.title }}</h2>
-    <form v-on:submit.prevent="deleteThisBook(book.id)">
+    <form @submit.prevent="deleteThisBook(book.id)">
       <br />
       <p>
         <em><b>WARNING!</b></em> The action cannot be undone.
       </p>
-      <v-btn type="submit" color="red" dark
+      <v-btn type="submit" color="red darken-3" dark text
         >Delete<v-icon dark right>mdi-delete</v-icon></v-btn
       >
       <nuxt-link to="/">
-        <v-btn color="primary"
+        <v-btn color="blue darken-3" text
           >Cancel<v-icon dark right>mdi-cancel</v-icon></v-btn
         >
       </nuxt-link>
