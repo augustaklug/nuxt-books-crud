@@ -73,10 +73,7 @@ export default {
     ...mapActions(['addBook']),
     addNewBook() {
       this.addBook({
-        id: Math.random()
-          .toString(36)
-          .replace(/[^a-z]+/g, '')
-          .substr(2, 10),
+        id: Math.floor(100000000 + Math.random() * 900000000),
         author: this.author,
         title: this.title,
         year: this.year,

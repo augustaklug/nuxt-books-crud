@@ -1,6 +1,6 @@
 <template>
   <div v-if="renderComponent">
-    <h1>My books</h1>
+    <h1>Book wish list:</h1>
     <v-divider></v-divider>
     <br />
     <BookCard
@@ -9,6 +9,15 @@
       :book="book"
       :data-index="index"
     />
+    <div v-if="!books.length">
+      <nuxt-link to="/book/create">
+        <p
+          style="color: red; font-size: 1.5rem; font-weight: normal; font-style: italic"
+        >
+          Your list is empty, add some books.
+        </p>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
