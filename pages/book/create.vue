@@ -64,6 +64,9 @@
         clearable
         required
       ></v-text-field>
+      <p v-if="!isFormValid" style="color: red; font-style: italic">
+        Please fill in all fields
+      </p>
       <v-btn
         type="submit"
         :disabled="!isFormValid"
