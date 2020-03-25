@@ -15,13 +15,8 @@ export const mutations = {
     state.books.push(book)
   },
   DELETE_BOOK: (state, id) => {
-    state.books = state.books.filter((item) => id !== item.id)
-  },
-  UPDATE_BOOK: (state, book) => {
-    state.books.push(book)
-  },
-  updateAuthor(state, author) {
-    state.book.author = author
+    const index = state.books.findIndex((book) => book.id === id)
+    state.books.splice(index, 1)
   }
 }
 export const actions = {
@@ -43,11 +38,6 @@ export const actions = {
   deleteBook({ commit }, id) {
     return EventService.removeBook(id).then((response) => {
       commit('DELETE_BOOK')
-    })
-  },
-  updateBook({ commit }, id, book) {
-    return EventService.updateBook(id).then((response) => {
-      commit('UPDATE_BOOK', book)
     })
   }
 }

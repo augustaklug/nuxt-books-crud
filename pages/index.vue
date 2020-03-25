@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="renderComponent">
     <h1>My books</h1>
     <v-divider></v-divider>
     <br />
@@ -24,6 +24,20 @@ export default {
       error({
         statusCode: 503,
         message: 'Unable to fetch books at this time. Please try again.'
+      })
+    }
+  },
+  data() {
+    return {
+      renderComponent: true
+    }
+  },
+  methods: {
+    forceRenderer() {
+      this.renderComponent = false
+
+      this.$nextTick(() => {
+        this.renderComponent = true
       })
     }
   },
