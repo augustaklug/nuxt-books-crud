@@ -67,7 +67,7 @@
       </v-btn>
     </v-form>
 
-    <v-alert border="left" colored-border v-if="success" type="success">
+    <v-alert v-if="success" border="left" colored-border type="success">
       Success! Book saved
       <nuxt-link :to="'/book/' + book.id"
         ><v-btn small outlined color="success" absolute right
@@ -76,7 +76,7 @@
       >
     </v-alert>
 
-    <v-alert border="left" colored-border v-if="error" type="error">
+    <v-alert v-if="error" border="left" colored-border type="error">
       Error! The book was not saved
       <nuxt-link :to="'/book/' + book.id"
         ><v-btn small outlined color="error" absolute right
