@@ -17,6 +17,9 @@ export const mutations = {
   DELETE_BOOK: (state, id) => {
     const index = state.books.findIndex((book) => book.id === id)
     state.books.splice(index, 1)
+  },
+  GET_BOOK(state, book) {
+    state.book = Object.assign({}, state.book, book)
   }
 }
 export const actions = {
@@ -39,5 +42,8 @@ export const actions = {
     return EventService.removeBook(id).then((response) => {
       commit('DELETE_BOOK')
     })
+  },
+  putBook({ state }, id) {
+    EventService.putBook(id, state.book)
   }
 }

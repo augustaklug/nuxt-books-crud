@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "nuxt": "^2.0.0",
     "vee-validate": "^3.2.5",
+    "vue-sweetalert2": "^3.0.3",
     "vuex-map-fields": "^1.4.0"
   },
   "devDependencies": {

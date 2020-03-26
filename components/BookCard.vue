@@ -6,6 +6,11 @@
       </h4>
     </nuxt-link>
     <span class="float-right">
+      <nuxt-link :to="'/book/edit/' + book.id">
+        <v-btn text color="amber darken-3">
+          Edit<v-icon>mdi-pencil</v-icon>
+        </v-btn>
+      </nuxt-link>
       <nuxt-link :to="'/book/delete/' + book.id">
         <v-btn text color="red darken-3">
           Delete<v-icon>mdi-delete</v-icon>
