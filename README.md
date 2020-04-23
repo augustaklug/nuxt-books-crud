@@ -1,6 +1,7 @@
 # at-vue
 
-> AT da disciplina Frameworks Front-End
+> A simple CRUD developed with Nuxt.js and json-server for a school project.
+>Check out the [DEMO](http://at-frameworks-vue.herokuapp.com/).
 
 ## Build Setup
 
