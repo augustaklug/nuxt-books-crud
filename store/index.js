@@ -1,4 +1,4 @@
-import EventService from '@/services/EventService.js'
+import ApiService from '~/services/apiService.js'
 
 export const state = () => ({
   books: [],
@@ -24,26 +24,26 @@ export const mutations = {
 }
 export const actions = {
   fetchBooks({ commit }) {
-    return EventService.getBooks().then((response) => {
+    return ApiService.getBooks().then((response) => {
       commit('SET_BOOKS', response.data)
     })
   },
   fetchBook({ commit }, id) {
-    return EventService.getBook(id).then((response) => {
+    return ApiService.getBook(id).then((response) => {
       commit('SET_BOOK', response.data)
     })
   },
   addBook({ commit }, book) {
-    return EventService.createBook(book).then((response) => {
+    return ApiService.createBook(book).then((response) => {
       commit('ADD_BOOK', book)
     })
   },
   deleteBook({ commit }, id) {
-    return EventService.removeBook(id).then((response) => {
+    return ApiService.removeBook(id).then((response) => {
       commit('DELETE_BOOK')
     })
   },
   putBook({ state }, id) {
-    EventService.putBook(id, state.book)
+    ApiService.putBook(id, state.book)
   }
 }
