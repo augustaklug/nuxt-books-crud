@@ -1,7 +1,9 @@
 # at-vue
 
 > A simple CRUD developed with Nuxt.js and json-server for a school project.
+> 
 > Assessment da disciplina Frameworks Front-end e Conexão com Back-end - Instituto Infnet [20E1_4]
+> 
 >Check out the [DEMO](http://at-frameworks-vue.herokuapp.com/).
 
 ## Build Setup
