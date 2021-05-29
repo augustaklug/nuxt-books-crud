@@ -13,21 +13,21 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
-    "nuxt": "^2.0.0",
-    "vee-validate": "^3.2.5",
-    "vue-sweetalert2": "^3.0.3",
-    "vuex-map-fields": "^1.4.0"
+    "@nuxtjs/axios": "^5.13.5",
+    "nuxt": "^2.15.6",
+    "vee-validate": "^3.4.7",
+    "vue-sweetalert2": "^3.0.8",
+    "vuex-map-fields": "^1.4.1"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.0.0",
     "@nuxtjs/eslint-config": "^2.0.0",
-    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/eslint-module": "^1.2.0",
+    "@nuxtjs/vuetify": "^1.11.3",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^1.19.1"
   }
 }
